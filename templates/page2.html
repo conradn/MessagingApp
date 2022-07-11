@@ -1,0 +1,74 @@
+<!DOCTYPEhtml>
+	<html>
+
+	<head>
+		<title>
+			ENJOY SENDING MESAGES
+		</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+			integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+	</head>
+
+	<body class="container">
+		<form action="post">
+			<div class=" row mt-5">
+				<div class="form-group col-6">
+					<label for="receipient">Receipient</label>
+					<input type="text" class="form-control" id="receipient" placeholder="Receipient">
+				</div>
+				<div class="form-group col-6">
+				</div>
+				<div class="form-group col-6">
+					<label for="message">Message</label>
+					<textarea class="form-control" id="message" placeholder="message" rows="4"></textarea>
+				</div>
+				<div class="form-group col-6">
+				</div>
+			
+				<div class="form-group col-6">
+					<label for="stype">Schedule Type</label>
+					<select class="form-control" id="stype">
+					  <option value="">---Select Type---</option>
+					  <option value="now">Now</option>
+					  <option value="custom">Custom</option>
+					</select>
+				  </div>
+				  <div id="sdatecontainer" class="form-group col-6">
+					<label for="sdatetime">Schedule Date</label>
+					<input type="datetime-local" class="form-control" id="sdatetime">
+				</div> 
+			</div>
+			<div class="row ml-1">
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</div>
+		</form>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script>
+		
+		$(function () {
+			const Stype = $('#stype');
+			const Sdatetime = $('#sdatetime');
+			const Sdatecontainer = $('#sdatecontainer');
+			Sdatecontainer.hide();	
+
+			Stype.on('change', function (event) {
+				let inputVal = $(this).val();
+				if(inputVal ==="now"){
+					//hide the date time input
+					Sdatecontainer.hide()
+					// Sdatecontainer.addClass('d-none');
+				}else{
+					Sdatecontainer.show()
+					// Sdatecontainer.removeClass('d-none');
+				}
+
+				console.log()
+			})
+			$('button').click(function () {
+				alert("bingo!!!!")
+		});
+		});
+	</script>
+	</body>
+
+	</html>
